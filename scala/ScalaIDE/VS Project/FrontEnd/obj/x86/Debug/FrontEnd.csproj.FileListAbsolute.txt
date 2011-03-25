@@ -1,0 +1,9 @@
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\bin\Debug\FrontEnd.exe
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\bin\Debug\FrontEnd.pdb
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\obj\x86\Debug\FrontEnd.Properties.Resources.resources
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\obj\x86\Debug\ResGen.read.1.tlog
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\obj\x86\Debug\ResGen.write.1.tlog
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\obj\x86\Debug\FrontEnd.exe
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\obj\x86\Debug\FrontEnd.pdb
+C:\UserPrograms\Workshops\Test\ScalaIDE\ScalaIDE\FrontEnd\obj\x86\Debug\FrontEnd.formScalaIDE.resources
