@@ -1,3 +1,4 @@
+
 trait Ordered[A]
 {
   def compare(that: A): Int

@@ -39,14 +39,3 @@ object Examples {
       fw.close
     }
 }
-
-import Examples._
-import Functional._
-
-object App
-{
-	def main(args:Array[String])
-	{
-		println( range(0,10) |> (map( a => a*a, _) ) )
-	}
-}

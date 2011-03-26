@@ -17,6 +17,9 @@ namespace FrontEnd
         private ScalaIDESettings settings = new ScalaIDESettings();
         private static StringBuilder sbOutput = new StringBuilder();
 
+        ProcessStartInfo ProcessInfo;
+        Process Process;
+
         public formScalaIDE()
         {
             InitializeComponent();
@@ -35,8 +38,6 @@ namespace FrontEnd
         public int ExecuteCommand(string Command, int Timeout)
         {
             int ExitCode;
-            ProcessStartInfo ProcessInfo;
-            Process Process;
 
             sbOutput = new StringBuilder(textBoxOutput.Text);
 
@@ -122,6 +123,8 @@ namespace FrontEnd
             BinaryFormatter bf = new BinaryFormatter();
             settings = bf.Deserialize(file) as ScalaIDESettings;
 
+            file.Close();
+
             textBoxScalaFolder.Text = settings.scalaFolder;
             textBoxWorkspaceFolder.Text = settings.workspaceFolder;
 
@@ -163,7 +166,7 @@ namespace FrontEnd
 
             textBoxOutput.Text = "compiling...";
 
-            string s = settings.scalac + " " + settings.currentFile;
+            string s = settings.scalac + " \"" + settings.currentFile + "\"";
             ExecuteCommand(s, 50000);
         }
 
@@ -243,9 +246,14 @@ namespace FrontEnd
 
             FileStream file = new FileStream(settings.currentFile, FileMode.Open);
             StreamReader sr = new StreamReader(file);
-            textBoxFile.Text = sr.ReadToEnd();
+            string filetext = sr.ReadToEnd();
             sr.Close();
             file.Close();
+
+            if (filetext.Contains("\n") && !filetext.Contains("\r"))
+                filetext = filetext.Replace("\n", Environment.NewLine);
+
+            textBoxFile.Text = filetext;
 
             settings.workspaceFolder = settings.currentFile.Substring(0, settings.currentFile.LastIndexOf('\\'));
             textBoxWorkspaceFolder.Text = settings.workspaceFolder;
@@ -255,6 +263,12 @@ namespace FrontEnd
         {
             string scalaInteractive = settings.scala;
             ExecuteCommandWithShell(scalaInteractive, 0);
+        }
+
+        private void terminateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Process.HasExited)
+                Process.Kill();
         }
     }
 

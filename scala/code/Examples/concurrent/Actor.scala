@@ -22,6 +22,7 @@ class Pinger(name:String) extends Actor
 				case Pong =>
 				{
 					println(name + ": pong")
+					exit()
 				}
 			}
 		}
@@ -38,5 +39,6 @@ object ActorTest
 		a2.start
 		
 		a1 ! Ping(a2)
+		a2 ! Ping(a1)
 	}
 }

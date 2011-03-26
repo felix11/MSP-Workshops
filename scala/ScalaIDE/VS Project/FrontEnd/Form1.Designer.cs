@@ -49,6 +49,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.terminateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPageWorkspace.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -119,6 +120,7 @@
             this.fileToolStripMenuItem,
             this.compileToolStripMenuItem,
             this.runToolStripMenuItem,
+            this.terminateToolStripMenuItem,
             this.scalaBashToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -179,6 +181,7 @@
             this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
             this.textBoxOutput.ReadOnly = true;
+            this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxOutput.Size = new System.Drawing.Size(918, 205);
             this.textBoxOutput.TabIndex = 0;
             // 
@@ -244,6 +247,13 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // terminateToolStripMenuItem
+            // 
+            this.terminateToolStripMenuItem.Name = "terminateToolStripMenuItem";
+            this.terminateToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.terminateToolStripMenuItem.Text = "Terminate";
+            this.terminateToolStripMenuItem.Click += new System.EventHandler(this.terminateToolStripMenuItem_Click);
+            // 
             // formScalaIDE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +303,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem scalaBashToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem terminateToolStripMenuItem;
     }
 }
 
