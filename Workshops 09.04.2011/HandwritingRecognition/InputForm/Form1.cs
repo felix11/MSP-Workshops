@@ -16,20 +16,6 @@ namespace InputForm
         public Form1()
         {
             InitializeComponent();
-
-            // Form initialisation: graphics
-            bmp = new Bitmap(100, 100);
-            using (Graphics bmpG = Graphics.FromImage(bmp))
-            {
-                bmpG.Clear(backgroundColor);
-            }
-            pictureBox1Graphics = pictureBox1.CreateGraphics();
-
-            // REcognition library initialisation:
-            handwritingRecObj = new Handwriting();
-
-            // Input data manipulator
-            dataManipulator = new DataManipulator();
         }
 
         private List<Point> lastPoints = new List<Point>();
@@ -96,18 +82,18 @@ namespace InputForm
         {
             lastPoints.Clear();
             isDrawing = false;
-
-            bmp.Save("current.bmp", ImageFormat.Bmp);
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                info("Loading images...");
+
                 dataManipulator.loadImages(openFileDialog1.FileNames);
                 handwritingRecObj.loadTrainImages(dataManipulator.InputData);
 
-                dataManipulator.ShowDialog();
+                info("Images loaded.");
             }
         }
 
@@ -146,6 +132,8 @@ namespace InputForm
 
         private void actionButton_Click(object sender, EventArgs e)
         {
+            bmp.Save("current.bmp", ImageFormat.Bmp);
+
             // Data mode
             if (actionButton.Text.Contains("save"))
             {
@@ -159,9 +147,19 @@ namespace InputForm
             // train mode
             else
             {
+                info("Recognising...");
+
                 string result = handwritingRecObj.recognise("current.bmp");
                 outputLabel.Text = result;
+
+                info("Recognising finished.");
             }
+        }
+
+        private void info(string p)
+        {
+            toolStripStatusLabel1.Text = p;
+            this.Update();
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -171,14 +169,34 @@ namespace InputForm
 
         private void trainToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            info("Training network...");
             handwritingRecObj.train();
-            MessageBox.Show("Network trained.");
+            info("Network trained.");
         }
 
         private void resetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             handwritingRecObj.reset();
             MessageBox.Show("Network reset.");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Form initialisation: graphics
+            bmp = new Bitmap(100, 100);
+            using (Graphics bmpG = Graphics.FromImage(bmp))
+            {
+                bmpG.Clear(backgroundColor);
+            }
+            pictureBox1Graphics = pictureBox1.CreateGraphics();
+
+            // Recognition library initialisation:
+            handwritingRecObj = new Handwriting(bmp.Width * bmp.Height);
+
+            // Input data manipulator
+            dataManipulator = new DataManipulator();
+
+            info("Application started.");
         }
     }
 }

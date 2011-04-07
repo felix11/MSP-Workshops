@@ -11,48 +11,75 @@ namespace RecognitionLib
 {
     public class Handwriting
     {
-        private List<StringInputData> trainImages;
-        private ArrayInputData trainData;
+        private List<StringInputData> trainImages = new List<StringInputData>();
+        private ArrayInputData trainData = null;
         private MultilayerNetwork mln;
         private int patternSize = 10000;
 
-        public Handwriting()
+        /// <summary>
+        /// A handwriting recognition object.
+        /// </summary>
+        /// <param name="patternSize">The size of one input pattern.</param>
+        public Handwriting(int patternSize)
         {
+            this.patternSize = patternSize;
             mln = new MultilayerNetwork(10, patternSize, 26);
         }
 
+        /// <summary>
+        /// Loads images into an input pattern structure.
+        /// </summary>
+        /// <param name="p">list of StringInputData, containing the image path as Key and the represented character as Value.</param>
         public void loadTrainImages(List<StringInputData> p)
         {
             trainImages = p;
-            trainData = new ArrayInputData(new DenseMatrix(patternSize, p.Count), new DenseMatrix(26, p.Count));
+            trainData = new ArrayInputData(new DenseMatrix(patternSize, p.Count), new DenseMatrix(26, p.Count, 0));
             Matrix<float> inputPattern;
-            Bitmap inputBmp;
             for (int img = 0; img < p.Count; img++)
             {
-                inputBmp = new Bitmap(p[img].Key, false);
-                inputPattern = DataManipulation.Bmp2Pattern(inputBmp);
+                inputPattern = DataManipulation.Bmp2Pattern(p[img].Key);
+                trainData.Key.SetColumn(img, inputPattern.Column(0));
+                // Careful: only upper letters are covered so far!!
+                trainData.Value.At(p[img].Value.ToUpper()[0] - 'A', img, 1.0f);
             }
         }
 
+        /// <summary>
+        /// Clears the training data.
+        /// </summary>
         public void clearTrainImages()
         {
             trainImages = new List<StringInputData>();
+            trainData = null;
         }
 
+        /// <summary>
+        /// Trains the network using backprop.
+        /// </summary>
         public void train()
         {
-            mln.backpropTraining(null, 100);
+            if (trainData == null)
+                throw new ArgumentException("No training data available!");
+
+            mln.backpropTraining(trainData, 100);
         }
 
+        /// <summary>
+        /// Resets the network to random values.
+        /// </summary>
         public void reset()
         {
             mln.randomize();
         }
 
+        /// <summary>
+        /// Recognizes the character in the file of the given path.
+        /// </summary>
+        /// <param name="p">Path to a file with a character image.</param>
+        /// <returns>The character in this image.</returns>
         public string recognise(string p)
         {
-            Bitmap inputBmp = new Bitmap(p, false);
-            Matrix<float> inputPattern = DataManipulation.Bmp2Pattern(inputBmp);
+            Matrix<float> inputPattern = DataManipulation.Bmp2Pattern(p);
 
             ArrayInputData aid = new ArrayInputData(inputPattern, null);
             Matrix<float> result = mln.use(aid);
@@ -60,11 +87,16 @@ namespace RecognitionLib
             return Mat2String(result);
         }
 
-        private string Mat2String(Matrix<float> result)
+        /// <summary>
+        /// Converts a target value matrix into a string.
+        /// </summary>
+        /// <param name="mat">The target value matrix of a network.</param>
+        /// <returns>the associated character.</returns>
+        private string Mat2String(Matrix<float> mat)
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < result.RowCount; i++)
-                if (result[i, 0] > 0.1)
+            for (int i = 0; i < mat.RowCount; i++)
+                if (mat[i, 0] > 0.6)
                     sb.Append((char)(i + 'A'));
             return sb.ToString();
         }

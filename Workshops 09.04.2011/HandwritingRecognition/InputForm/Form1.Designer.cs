@@ -46,11 +46,14 @@
             this.dataModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.outputBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,7 +73,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.75758F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(549, 182);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(549, 184);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -107,7 +110,7 @@
             this.outputBox.Controls.Add(this.outputLabel);
             this.outputBox.Location = new System.Drawing.Point(313, 3);
             this.outputBox.Name = "outputBox";
-            this.outputBox.Size = new System.Drawing.Size(233, 176);
+            this.outputBox.Size = new System.Drawing.Size(233, 178);
             this.outputBox.TabIndex = 2;
             this.outputBox.TabStop = false;
             this.outputBox.Text = "Recognition Area";
@@ -126,7 +129,7 @@
             // actionButton
             // 
             this.actionButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.actionButton.Location = new System.Drawing.Point(179, 72);
+            this.actionButton.Location = new System.Drawing.Point(179, 73);
             this.actionButton.Name = "actionButton";
             this.actionButton.Size = new System.Drawing.Size(123, 37);
             this.actionButton.TabIndex = 3;
@@ -228,16 +231,34 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Multiselect = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 214);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(573, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 221);
+            this.ClientSize = new System.Drawing.Size(573, 236);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Handwriting Recognition";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -246,6 +267,8 @@
             this.outputBox.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,6 +294,8 @@
         private System.Windows.Forms.ToolStripMenuItem dataModeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testModeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

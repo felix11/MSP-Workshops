@@ -9,6 +9,9 @@ using System.Drawing;
 
 namespace RecognitionLib
 {
+    /// <summary>
+    /// Helper class for data manipulation and generation.
+    /// </summary>
     class DataManipulation
     {
         private static MathNet.Numerics.Random.SystemCryptoRandomNumberGenerator rGen = new MathNet.Numerics.Random.SystemCryptoRandomNumberGenerator();
@@ -18,14 +21,18 @@ namespace RecognitionLib
         /// </summary>
         /// <param name="inputBmp"></param>
         /// <returns>a Row*Col X 1 matrix containing the bitmap pixel</returns>
-        public static Matrix<float> Bmp2Pattern(System.Drawing.Bitmap inputBmp)
+        public static Matrix<float> Bmp2Pattern(string path)
         {
+            System.Drawing.Bitmap inputBmp = new Bitmap(path);
+
             Matrix<float> result = new DenseMatrix(inputBmp.Width * inputBmp.Height, 1);
             for(int row = 0; row < inputBmp.Height; row++)
                 for (int col = 0; col < inputBmp.Width; col++)
                 {
                     result[(row + 1) * col, 0] = (Convert.ToSingle(inputBmp.GetPixel(row, col).R) + Convert.ToSingle(inputBmp.GetPixel(row, col).G) + Convert.ToSingle(inputBmp.GetPixel(row, col).B)) / (3.0f * 255.0f);
                 }
+
+            inputBmp.Dispose();
 
             return result;
         }
