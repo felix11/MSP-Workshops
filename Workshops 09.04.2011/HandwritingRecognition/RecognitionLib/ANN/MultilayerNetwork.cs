@@ -95,12 +95,7 @@ namespace RecognitionLib.ANN
             Matrix<float> dv = new DenseMatrix(TargetSize, HiddenNodes + 1);
 
             // training
-            for (int epoch = 0; epoch < epochs; epoch++)
-            {
-                forwardPass(pat);
-                backwardPass(pat, targets);
-                weightUpdate(pat, dw, dv);
-            }
+
         }
 
         /// <summary>
