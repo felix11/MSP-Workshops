@@ -14,14 +14,6 @@ C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS
 C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\Test\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\Test\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\obj\Debug\RecognitionLib.dll
 C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\Test\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\obj\Debug\RecognitionLib.pdb
-C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\bin\Debug\RecognitionLib.dll
-C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\bin\Debug\RecognitionLib.pdb
-C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\bin\Debug\MathNet.Numerics.dll
-C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\bin\Debug\zlib.net.dll
-C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\bin\Debug\MathNet.Numerics.xml
-C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\obj\Debug\RecognitionLib.dll
-C:\Users\Felix Dietrich\Documents\Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\obj\Debug\RecognitionLib.pdb
 C:\Users\Felix Dietrich\Documents\My Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\bin\Debug\RecognitionLib.dll
 C:\Users\Felix Dietrich\Documents\My Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\bin\Debug\RecognitionLib.pdb
 C:\Users\Felix Dietrich\Documents\My Dropbox\Projects\Work\MSP\Samstagsworkshops SS11\Workshops\GIT\Workshops 09.04.2011\HandwritingRecognition\RecognitionLib\bin\Debug\MathNet.Numerics.dll
