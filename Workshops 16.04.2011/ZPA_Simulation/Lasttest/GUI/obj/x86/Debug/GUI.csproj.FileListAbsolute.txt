@@ -1,0 +1,12 @@
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\bin\Debug\GUI.exe
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\bin\Debug\GUI.pdb
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\obj\x86\Debug\GUI.Form1.resources
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\obj\x86\Debug\GUI.Properties.Resources.resources
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\obj\x86\Debug\GUI.exe
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\obj\x86\Debug\GUI.pdb
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\bin\Debug\Students.dll
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\bin\Debug\Students.pdb
+C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\Lasttest\GUI\bin\Debug\Students.xml

@@ -62,7 +62,7 @@ namespace RecognitionLib
                 throw new ArgumentException("No training data available!");
 
             // use backprop
-            
+            mln.backpropTraining(trainData, 100);
         }
 
         /// <summary>
@@ -80,7 +80,13 @@ namespace RecognitionLib
         /// <returns>The character in this image.</returns>
         public string recognise(string p)
         {
-            return "";
+            // file path 2 array
+            ArrayInputData aid = new ArrayInputData(DataManipulation.Bmp2Pattern(p), null);
+
+            // use the network
+            Matrix<float> result = mln.use(aid);
+
+            return Mat2String(result);
         }
 
         /// <summary>

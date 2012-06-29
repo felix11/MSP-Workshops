@@ -1,5 +1,0 @@
-C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\ZPA\bin\ZPA.dll
-C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\ZPA\bin\ZPA.pdb
-C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\ZPA\obj\Debug\ResolveAssemblyReference.cache
-C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\ZPA\obj\Debug\ZPA.dll
-C:\UserPrograms\Projects\Samstagsworkshops SS11\Workshops\GIT\Workshops 16.04.2011\ZPA_Simulation\ZPA\obj\Debug\ZPA.pdb

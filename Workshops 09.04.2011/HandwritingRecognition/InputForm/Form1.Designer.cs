@@ -65,7 +65,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.59105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.40895F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 239F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.outputBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.actionButton, 1, 0);
@@ -108,9 +108,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.outputBox.AutoSize = true;
             this.outputBox.Controls.Add(this.outputLabel);
-            this.outputBox.Location = new System.Drawing.Point(313, 3);
+            this.outputBox.Location = new System.Drawing.Point(312, 3);
             this.outputBox.Name = "outputBox";
-            this.outputBox.Size = new System.Drawing.Size(233, 178);
+            this.outputBox.Size = new System.Drawing.Size(234, 178);
             this.outputBox.TabIndex = 2;
             this.outputBox.TabStop = false;
             this.outputBox.Text = "Recognition Area";
