@@ -100,7 +100,7 @@ namespace RecognitionLib.ANN
                 // backprop
                 forwardPass(pat);
                 backwardPass(pat, targets);
-                weightUpdate(pat, dw, dv);
+                weightUpdate(pat, dw, dv, targets);
             }
         }
 
@@ -152,13 +152,26 @@ namespace RecognitionLib.ANN
             net_deltah = net_deltah.SubMatrix(0, HiddenNodes, 0, pat.ColumnCount);
         }
 
+        private Matrix<float> MatrixSign(Matrix<float> inputMatrix)
+        {
+            Matrix<float> res = new DenseMatrix(inputMatrix.RowCount, inputMatrix.ColumnCount);
+            for (int row = 0; row < inputMatrix.RowCount;row++ )
+            {
+                for (int col = 0; col < inputMatrix.ColumnCount; col++)
+                {
+                    res[row, col] = Math.Sign(inputMatrix[row,col]);
+                }
+            }
+            return res;
+        }
+
         /// <summary>
         /// After the forward and backward pass, the weights must be updated. This is done in this function.
         /// </summary>
         /// <param name="pat">input pattern</param>
         /// <param name="dw">delta w, from last updates. Used to update weights1 after recalculation.</param>
         /// <param name="dv">delta v, from last updates. Used to update weights2 after recalculation.</param>
-        private void weightUpdate(Matrix<float> pat, Matrix<float> dw, Matrix<float> dv)
+        private void weightUpdate(Matrix<float> pat, Matrix<float> dw, Matrix<float> dv, Matrix<float> targets)
         {
             /*
                 % weight update, MATLAB code
@@ -177,6 +190,10 @@ namespace RecognitionLib.ANN
 
             weights1 += dw.Multiply(eta).Multiply(1 + DataManipulation.rand(1, 1)[0, 0] / 1000f);
             weights2 += dv.Multiply(eta).Multiply(1 + DataManipulation.rand(1, 1)[0, 0] / 1000f);
+
+            Matrix<float> e1 = (MatrixSign(net_out) - targets).Multiply(0.5f).Multiply(new DenseMatrix(net_out.ColumnCount, 1, 1.0f)).Transpose().Multiply(new DenseMatrix(net_out.RowCount, 1, 1.0f));
+            double e = e1[0, 0];
+            e = e;
         }
 
         /// <summary>

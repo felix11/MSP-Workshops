@@ -29,7 +29,7 @@ namespace RecognitionLib
             for(int row = 0; row < inputBmp.Height; row++)
                 for (int col = 0; col < inputBmp.Width; col++)
                 {
-                    result[(row + 1) * col, 0] = (Convert.ToSingle(inputBmp.GetPixel(row, col).R) + Convert.ToSingle(inputBmp.GetPixel(row, col).G) + Convert.ToSingle(inputBmp.GetPixel(row, col).B)) / (3.0f * 255.0f);
+                    result[(row * inputBmp.Width) + col, 0] = (Convert.ToSingle(inputBmp.GetPixel(row, col).R) + Convert.ToSingle(inputBmp.GetPixel(row, col).G) + Convert.ToSingle(inputBmp.GetPixel(row, col).B)) / (3.0f * 255.0f);
                 }
 
             inputBmp.Dispose();
